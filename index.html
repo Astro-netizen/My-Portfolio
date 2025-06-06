@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span id="theme-icon">🌙</span>
+    </div>
+  </nav>
+
+  <!-- Introduction -->
+  <section id="intro" data-aos="fade-up">
+    <h1>Hello, I'm Harsh</h1>
+    <p>I am an Aspiring Data Scientist | Robotics Enthusiast</p>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" data-aos="fade-right">
+    <div class="achievements-inner">
+      <h2>My Achievements</h2>
+      <div class="card-container">
+        <div class="card" onclick="openModal(this)" 
+          data-title="Robotic Hand Project" 
+          data-description="This robotic hand was developed to help specially-abled individuals communicate through gestures."
+          data-images='["images/IMG1.jpg", "images/IMG2.jpg", "images/IMG3.jpg", "images/IMG4.jpg", "images/IMG5.jpg"]'
+          data-video="videos\Video1.mp4"
+          data-tilt>
+          <h3>Robotic Hand Project</h3>
+          <p>Designed for communicating with specially-abled individuals.</p>
+        </div>
+        
+        <div class="card" onclick="openModal(this)" 
+          data-title="Internship at Go-Green Tech"
+          data-description="Worked on IoT-based smart boards for rapid prototyping and automation."
+          data-img="internship.jpg"
+          data-video="internship-demo.mp4" 
+          data-tilt>
+          <h3>Internship at Go-Green Tech</h3>
+          <p>Worked on IoT-based smart boards for prototyping.</p>
+        </div>
+        
+        <div class="card" onclick="openModal(this)" 
+          data-title="State-Level Robotics"
+          data-description="Competed in a robotics design challenge and won 1st place at the state level."
+          data-img="state-robotics.jpg"
+          data-video="state-robotics-demo.mp4"
+          data-tilt>
+          <h3>State-Level Robotics</h3>
+          <p>Competed and won in a robotics design challenge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Contact Form -->
+  <section id="contact" data-aos="zoom-in">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+<div id="achievementModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-description"></p>
+    <div id="modal-images"></div>
+    <video id="modal-video" controls>
+      <source id="modal-video-source" src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+</html>
